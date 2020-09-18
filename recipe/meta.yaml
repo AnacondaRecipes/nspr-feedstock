@@ -1,4 +1,4 @@
-{% set version = "4.22" %}
+{% set version = "None" %}
 
 package:
   name: nspr
@@ -7,7 +7,7 @@ package:
 source:
   fn: nspr-{{ version }}.tgz
   url: https://ftp.mozilla.org/pub/nspr/releases/v{{ version }}/src/nspr-{{ version }}.tar.gz
-  sha256: c9e4b6cc24856ec93202fe13704b38b38ba219f0f2aeac93090ce2b6c696d430
+  sha256: ff75302b2d938162f986b31e6fac419ebfafda7835eaf7ca4ca1e4e7290ef5c8
 
 build:
   number: 0
