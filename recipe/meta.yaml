@@ -34,6 +34,7 @@ test:
 about:
   home: https://hg.mozilla.org/projects/nspr
   license: MPL-2.0
+  license_family: OTHER
   license_file: nspr/LICENSE
   summary: A platform-neutral API for system level and libc-like functions.
   description: |
