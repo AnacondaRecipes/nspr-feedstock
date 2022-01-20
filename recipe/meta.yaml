@@ -32,7 +32,7 @@ test:
     - test -f ${PREFIX}/bin/nspr-config                  # [unix]
 
 about:
-  home: https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSPR
+  home: https://hg.mozilla.org/projects/nspr
   license: MPL-2.0
   license_file: nspr/LICENSE
   summary: A platform-neutral API for system level and libc-like functions.
@@ -42,8 +42,8 @@ about:
     thread synchronization, normal file and network I/O, interval timing and
     calendar time, basic memory management (malloc and free) and shared
     library linking.
-  doc_url: https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSPR
-  dev_url: https://developer.mozilla.org/en-US/docs/MDN
+  doc_url: https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS/Reference/NSPR_functions
+  dev_url: https://hg.mozilla.org/projects/nspr
 
 extra:
   recipe-maintainers:
