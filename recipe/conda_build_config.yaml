@@ -1,8 +1,2 @@
-CONDA_BUILD_SYSROOT:
-  - /opt/MacOSX10.11.sdk
-macos_min_version:
-  - 10.11
-macos_machine:
-  - x86_64-apple-darwin13.4.0
-MACOSX_DEPLOYMENT_TARGET:
-  - 10.11
+MACOSX_SDK_VERSION:        # [osx and x86_64]
+  - 10.13                  # [osx and x86_64]
