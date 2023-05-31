@@ -4,7 +4,7 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* ./nspr/build/autoconf
 
 export HOST_CC=$CC_FOR_BUILD
 
-cd nspr
+cd nspr || exit 1
 
 sed -ri 's#^(RELEASE_BINS =).*#\1#' pr/src/misc/Makefile.in
 sed -i 's#$(LIBRARY) ##'            config/rules.mk

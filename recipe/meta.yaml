@@ -1,4 +1,4 @@
-{% set version = "4.33" %}
+{% set version = "4.35" %}
 
 package:
   name: nspr
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://ftp.mozilla.org/pub/nspr/releases/v{{ version }}/src/nspr-{{ version }}.tar.gz
-  sha256: b23ee315be0e50c2fb1aa374d17f2d2d9146a835b1a79c1918ea15d075a693d7
+  sha256: 7ea3297ea5969b5d25a5dd8d47f2443cda88e9ee746301f6e1e1426f8a6abc8f
 
 build:
   number: 0
@@ -16,7 +16,7 @@ build:
 
 requirements:
   build:
-    - gnuconfig  # [unix]
+    - gnuconfig
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make
@@ -25,14 +25,14 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/lib/libnspr4${SHLIB_EXT}         # [unix]
-    - test -f ${PREFIX}/lib/libplc4${SHLIB_EXT}          # [unix]
-    - test -f ${PREFIX}/lib/libplds4${SHLIB_EXT}         # [unix]
-    - test -d ${PREFIX}/include/nspr                     # [unix]
-    - test -f ${PREFIX}/bin/nspr-config                  # [unix]
+    - test -f ${PREFIX}/lib/libnspr4${SHLIB_EXT}
+    - test -f ${PREFIX}/lib/libplc4${SHLIB_EXT}
+    - test -f ${PREFIX}/lib/libplds4${SHLIB_EXT}
+    - test -d ${PREFIX}/include/nspr
+    - test -f ${PREFIX}/bin/nspr-config
 
 about:
-  home: https://hg.mozilla.org/projects/nspr
+  home: https://firefox-source-docs.mozilla.org/nspr/index.html
   license: MPL-2.0
   license_family: OTHER
   license_file: nspr/LICENSE
@@ -43,7 +43,7 @@ about:
     thread synchronization, normal file and network I/O, interval timing and
     calendar time, basic memory management (malloc and free) and shared
     library linking.
-  doc_url: https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS/Reference/NSPR_functions
+  doc_url: https://firefox-source-docs.mozilla.org/nspr/index.html
   dev_url: https://hg.mozilla.org/projects/nspr
 
 extra:
