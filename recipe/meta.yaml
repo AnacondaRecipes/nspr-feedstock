@@ -1,12 +1,13 @@
-{% set version = "4.35" %}
+{% set name = "nspr" %}
+{% set version = "4.37" %}
 
 package:
-  name: nspr
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://ftp.mozilla.org/pub/nspr/releases/v{{ version }}/src/nspr-{{ version }}.tar.gz
-  sha256: 7ea3297ea5969b5d25a5dd8d47f2443cda88e9ee746301f6e1e1426f8a6abc8f
+  url: https://ftp.mozilla.org/pub/{{ name }}/releases/v{{ version }}/src/{{ name }}-{{ version }}.tar.gz
+  sha256: 5f9344ed0e31855bd38f88b33c9d9ab94f70ce547ef3213e488d1520f61840fa
 
 build:
   number: 0
@@ -17,6 +18,7 @@ build:
 requirements:
   build:
     - gnuconfig
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make
@@ -24,12 +26,20 @@ requirements:
     - sed
 
 test:
+  files:
+    - tests/execute_tests.sh
+  source_files:
+    - nspr/lib/tests
   commands:
     - test -f ${PREFIX}/lib/libnspr4${SHLIB_EXT}
     - test -f ${PREFIX}/lib/libplc4${SHLIB_EXT}
     - test -f ${PREFIX}/lib/libplds4${SHLIB_EXT}
     - test -d ${PREFIX}/include/nspr
     - test -f ${PREFIX}/bin/nspr-config
+    - nspr-config --version
+    - nspr-config --cflags
+    - nspr-config --libs
+    - ./tests/execute_tests.sh
 
 about:
   home: https://firefox-source-docs.mozilla.org/nspr/index.html

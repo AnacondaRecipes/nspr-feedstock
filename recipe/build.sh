@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
+set -ex
 # Get an updated config.sub and config.guess
 cp $BUILD_PREFIX/share/gnuconfig/config.* ./nspr/build/autoconf
 
 export HOST_CC=$CC_FOR_BUILD
 
-cd nspr || exit 1
+cd $SRC_DIR/nspr
 
 sed -ri 's#^(RELEASE_BINS =).*#\1#' pr/src/misc/Makefile.in
 sed -i 's#$(LIBRARY) ##'            config/rules.mk
@@ -13,3 +14,7 @@ sed -i 's#$(LIBRARY) ##'            config/rules.mk
 
 make -j $CPU_COUNT
 make install
+
+# build tests
+cd $SRC_DIR/nspr/lib/tests
+make -j ${CPU_COUNT}
