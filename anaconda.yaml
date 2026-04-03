@@ -1,5 +1,5 @@
 anaconda_config_version: 1
 upstream_sources:
   - webpage:
-      url: https://archive.mozilla.org/pub/nspr/releases/v{}/src/nspr-{}.tar.gz
+      url: https://archive.mozilla.org/pub/nspr/releases/
       regex: /(v[\d.]+)
