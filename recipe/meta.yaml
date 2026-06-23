@@ -1,5 +1,5 @@
 {% set name = "nspr" %}
-{% set version = "4.37" %}
+{% set version = "4.39" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://ftp.mozilla.org/pub/{{ name }}/releases/v{{ version }}/src/{{ name }}-{{ version }}.tar.gz
-  sha256: 5f9344ed0e31855bd38f88b33c9d9ab94f70ce547ef3213e488d1520f61840fa
+  sha256: bbd02ee87a55676063a63e5bc819e0227de2666b47307b2a0134414cdf42368e
 
 build:
   number: 0
